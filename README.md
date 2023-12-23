@@ -24,3 +24,6 @@
                            ToTensorV2()])
 
 ```
+- 데이터에 class imbalance가 심하여 validation 과정에서 Stratified KFold 를 사용하였다
+- 각 Fold에서 얻어진 model에 대해 soft_voting을 수행하여 최종 output을 얻어냈다
+- 3개 모델에서 얻어진 output을 조합하여 18개 class로 반환하였다.
