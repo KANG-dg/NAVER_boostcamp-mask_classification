@@ -43,3 +43,4 @@
 - 60대 이상 에서만 모델이 분류를 잘 못하기에 모델에 혼동을 주는 경계값(50대후반)을 downsampling 여기서는 제거 하였음
 - class imbalance를 완화하기 위해 weighted random sampler를 사용(참고: [weighted_random_sampler](https://yeong-jin-data-blog.tistory.com/entry/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%EC%8A%A4%ED%84%B0%EB%94%94-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%B6%88%EA%B7%A0%ED%98%95-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%EA%B0%80%EC%A4%91-%EB%AC%B4%EC%9E%91%EC%9C%84-%EC%83%98%ED%94%8C%EB%A7%81-%EA%B0%80%EC%A4%91-%EC%86%90%EC%8B%A4-%ED%95%A8%EC%88%98))
 - efficientnet v2 사용 고려 해 볼 것
+- 데이터 맞는 augmentation 적용 (샤프닝 등으로 사람 얼굴 주름 더 판단하기 쉽게)
