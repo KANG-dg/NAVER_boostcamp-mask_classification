@@ -34,3 +34,12 @@
 - 모델 선정에서 내 경험상 비슷한 task 에서 Convnext_Large가 좋은 성능을 낸 경우가 많았기에 해당 모델을 위주로 실험하였다 하지만 예상과 다르게 더 작은 모델인 Efficientnet_b0에서 더 높은 성능이 나왔다.
 -  마찬가지로 Augmentation에서 시간 부족으로 경험적으로 좋은 결과를 얻었던 기법들을 사용하였다 이 경우 역시 입력 데이터의 특성을 잘 파악하여 더 많은 augmentation을 실험했으면 하는 아쉬움이 있다.
 -  도메인에 대한 파악이 이루어지고 실험을 하는게 중요하다고 다시 한번 느꼈다.
+
+### 이후 추가 시도사항
+- EDA를 통해 불균형 파악
+- 불균형시 Downsampling 적용
+- mask, age, gender를 각각 classification 해서 모델이 어떤 label에서 못 맞추는지 파악 여기서는 age를 못 맞춤
+- 60대 이상 데이터가 적기에 oversampling 적용 생각 해 볼만 하다.-> 단순히 복사 해 늘리는건 overfitting가능성 높음
+- 60대 이상 에서만 모델이 분류를 잘 못하기에 모델에 혼동을 주는 경계값(50대후반)을 downsampling 여기서는 제거 하였음
+- class imbalance를 완화하기 위해 weighted random sampler를 사용(참고: [weighted_random_sampler](https://yeong-jin-data-blog.tistory.com/entry/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%EC%8A%A4%ED%84%B0%EB%94%94-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%B6%88%EA%B7%A0%ED%98%95-%EB%8B%A4%EB%A3%A8%EA%B8%B0-%EA%B0%80%EC%A4%91-%EB%AC%B4%EC%9E%91%EC%9C%84-%EC%83%98%ED%94%8C%EB%A7%81-%EA%B0%80%EC%A4%91-%EC%86%90%EC%8B%A4-%ED%95%A8%EC%88%98))
+- efficientnet v2 사용 고려 해 볼 것
